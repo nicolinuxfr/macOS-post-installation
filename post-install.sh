@@ -19,28 +19,33 @@ then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+# Vérifier que tout est bien à jour
+brew update
+
 ## Utilitaires pour les autres apps : Cask et mas (Mac App Store)
 echo 'Installation de mas, pour installer les apps du Mac App Store.'
 brew install mas
 echo "Saisir le mail du compte iTunes :" 
 read COMPTE
-echo "Authentification : saisir le mot de passe du compte : $COMPTE"
-mas signin $COMPTE
+echo "Saisir le mot de passe du compte : $COMPTE"
+read PASSWORD
+mas signin $COMPTE "$PASSWORD"
 
 echo 'Installation de Cask, pour installer les autres apps.'
 brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils en ligne de commande.'
-brew install wget cmake coreutils psutils git ffmpeg
+brew install wget cmake coreutils psutils git ffmpeg node
 
 echo 'Installation des apps : utilitaires.'
-brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts
-brew install mackup
+brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts carbon
 # FastScripts
-brew mas install 446994638
+mas install 446994638
 # PopClip
-brew mas install 445189367
+mas install 445189367
+# Amphetamine
+mas install 937984704
 
 # Installation et configuration de ZSH
 brew install zsh && \
@@ -49,58 +54,58 @@ chsh -s $(brew --prefix)/bin/zsh
 
 echo 'Installation des apps : écriture.'
 # iA Writer
-brew mas install 775737590
+mas install 775737590
+# Marked
+mas install 890031187
 brew cask install evernote
 
 echo 'Installation des apps : développement.'
 brew install hugo
-brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom
+brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit
 # Xcode
-brew mas install 497799835
-# Transmit
-brew mas install 403388562
-# Quiver
-brew mas install 866773894
+mas install 497799835
+# Quiver 
+mas install 866773894
 # JSON Helper for AppleScript
-brew mas install 453114608
+mas install 453114608
 # Twitter Scripter
-brew mas install 645249778
+mas install 645249778
 
 
 echo 'Installation des apps : communication.'
 # Reeder
-brew mas install 880001334
+mas install 880001334
 # Twitter
-brew mas install 409789998
+mas install 409789998
 # Tweetbot
-brew mas install 557168941
+mas install 557168941
 # 1Password
-brew mas install 443987910
+mas install 443987910
 # Wunderlist
-brew mas install 410628904
+mas install 410628904
 brew cask install google-chrome firefox mattermost evernote transmission
 
 
 echo 'Installation des apps : photo et vidéo.'
 brew cask install imageoptim sketch google-photos-backup
 # Acorn
-brew mas install 1019272813
+mas install 1019272813
 # Pixelmator
-brew mas install 407963104
+mas install 407963104
 #JPEG Mini
-brew mas install 498944723
+mas install 498944723
 # Final Cut Pro
-brew mas install 424389933
+mas install 424389933
 # Napkin
-brew mas install 581789185
+mas install 581789185
 # Precise Screenshot
-brew mas install 531794281
+mas install 531794281
 
 
 echo 'Installation des apps : loisir.'
 brew install mpv
 # TunesArt
-brew mas install 444696268 
+mas install 444696268 
 brew cask install vox xld beardedspice
 
 
