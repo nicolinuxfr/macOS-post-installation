@@ -103,7 +103,8 @@ mas install 531794281
 
 
 echo 'Installation des apps : loisir.'
-brew install mpv
+brew install mpv --with-bundle
+brew linkapps mpv # Pour avoir un .app dans le dossier des Applications
 # TunesArt
 mas install 444696268 
 brew cask install vox xld beardedspice
