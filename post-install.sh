@@ -87,7 +87,7 @@ brew cask install google-chrome firefox mattermost evernote transmission
 
 
 echo 'Installation des apps : photo et vidéo.'
-brew cask install imageoptim sketch google-photos-backup
+brew cask install imageoptim sketch google-photos-backup qlimagesize
 # Acorn
 mas install 1019272813
 # Pixelmator
