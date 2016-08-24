@@ -109,6 +109,9 @@ brew linkapps mpv # Pour avoir un .app dans le dossier des Applications
 mas install 444696268 
 brew cask install vox xld beardedspice
 
+# DockArt (installation manuelle, faute de mieux)
+cd /tmp/ && wget http://www.splook.com/Software/DockArt_files/DockArt2.zip && unzip DockArt2.zip && cd DockArt\ 2.2 && mv DockArt.bundle ~/Library/iTunes/iTunes\ Plug-ins
+
 
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
