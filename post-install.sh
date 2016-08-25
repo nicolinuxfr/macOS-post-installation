@@ -52,11 +52,17 @@ brew install zsh && \
 sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
 chsh -s $(brew --prefix)/bin/zsh
 
-echo 'Installation des apps : écriture.'
+echo 'Installation des apps : bureautique.'
 # iA Writer
 mas install 775737590
 # Marked
 mas install 890031187
+# Pages
+mas install 409201541
+# Keynote
+mas install 409183694
+# Numbers
+mas install 409203825
 brew cask install evernote
 
 echo 'Installation des apps : développement.'
