@@ -47,10 +47,8 @@ mas install 445189367
 # Amphetamine
 mas install 937984704
 
-# Installation et configuration de ZSH
-brew install zsh && \
-sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells' && \
-chsh -s $(brew --prefix)/bin/zsh
+# Installation de oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo 'Installation des apps : bureautique.'
 # iA Writer
