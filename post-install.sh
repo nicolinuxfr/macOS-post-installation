@@ -36,7 +36,7 @@ brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils en ligne de commande.'
-brew install wget cmake coreutils psutils git ffmpeg node
+brew install wget cmake coreutils psutils git ffmpeg node libssh
 
 echo 'Installation des apps : utilitaires.'
 brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts carbon
@@ -46,6 +46,8 @@ mas install 446994638
 mas install 445189367
 # Amphetamine
 mas install 937984704
+# MacTracker
+mas install 430255202
 
 # Installation de oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
