@@ -36,7 +36,10 @@ brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils en ligne de commande.'
-brew install wget cmake coreutils psutils git ffmpeg node libssh
+brew install wget cmake coreutils psutils git ffmpeg node libssh openssh
+brew tap zyedidia/micro
+brew install micro
+gem install sass
 
 echo 'Installation des apps : utilitaires.'
 brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts carbon
@@ -55,6 +58,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo 'Installation des apps : bureautique.'
 # iA Writer
 mas install 775737590
+# Ulysses
+mas install 623795237
 # Marked
 mas install 890031187
 # Pages
