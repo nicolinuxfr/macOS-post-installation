@@ -7,6 +7,7 @@
 # - https://github.com/ryanmaclean/OSX-Post-Install-Script/
 # - https://github.com/snwh/osx-post-install
 # - https://github.com/bdougherty/dotfiles/blob/master/osx.sh
+# - https://github.com/argon/mas/issues/41#issuecomment-245846651
 
 
 ## La base : Homebrew et les lignes de commande
@@ -31,6 +32,19 @@ echo "Saisir le mot de passe du compte : $COMPTE"
 read PASSWORD
 mas signin $COMPTE "$PASSWORD"
 
+# Installation d'apps avec mas (source : https://github.com/argon/mas/issues/41#issuecomment-245846651)
+function install () {
+	# Check if the App is already installed
+	mas list | grep -i "$1" > /dev/null
+
+	if [ "$?" == 0 ]; then
+		echo "==> $1 est déjà installée"
+	else
+		echo "==> Installation de $1..."
+		mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
+	fi
+}
+
 echo 'Installation de Cask, pour installer les autres apps.'
 brew tap caskroom/cask
 
@@ -43,81 +57,56 @@ gem install sass
 
 echo 'Installation des apps : utilitaires.'
 brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts carbon
-# FastScripts
-mas install 446994638
-# PopClip
-mas install 445189367
-# Amphetamine
-mas install 937984704
-# MacTracker
-mas install 430255202
+install "FastScripts"
+install "PopClip"
+install "Amphetamine"
+install "MacTracker"
 
 # Installation de oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo 'Installation des apps : bureautique.'
-# iA Writer
-mas install 775737590
-# Ulysses
-mas install 623795237
-# Marked
-mas install 890031187
-# Pages
-mas install 409201541
-# Keynote
-mas install 409183694
-# Numbers
-mas install 409203825
+install "iA Writer"
+install "Ulysses"
+install "Marked"
+install "Pages"
+install "Keynote"
+install "Numbers"
+install "Soulver"
 brew cask install evernote
 
 echo 'Installation des apps : développement.'
 brew install hugo
 brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit
-# Xcode
-mas install 497799835
-# Quiver 
-mas install 866773894
-# JSON Helper for AppleScript
-mas install 453114608
-# Twitter Scripter
-mas install 645249778
+install "Xcode"
+install "Quiver"
+install "JSON Helper for AppleScript"
+install "Twitter Scripter"
 
 
 echo 'Installation des apps : communication.'
-# Reeder
-mas install 880001334
-# Twitter
-mas install 409789998
-# Tweetbot
-mas install 557168941
-# 1Password
-mas install 443987910
-# Wunderlist
-mas install 410628904
+install "Reeder"
+install "Twitter"
+install "Tweetbot"
+install "1Password"
+install "Wunderlist"
 brew cask install google-chrome firefox mattermost evernote transmission
 
 
 echo 'Installation des apps : photo et vidéo.'
 brew cask install imageoptim sketch google-photos-backup qlimagesize
-# Acorn
-mas install 1019272813
-# Pixelmator
-mas install 407963104
-#JPEG Mini
-mas install 498944723
-# Final Cut Pro
-mas install 424389933
-# Napkin
-mas install 581789185
-# Precise Screenshot
-mas install 531794281
+install "Acorn"
+install "Pixelmator"
+install "JPEG Mini"
+install "Napkin"
+Install "Precise Screenshot"
 
 
 echo 'Installation des apps : loisir.'
 brew install mpv --with-bundle
 brew linkapps mpv # Pour avoir un .app dans le dossier des Applications
+install "TunesArt"
 # TunesArt
-mas install 444696268 
 brew cask install vox xld beardedspice
 
 # DockArt (installation manuelle, faute de mieux)
