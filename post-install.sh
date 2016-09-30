@@ -197,6 +197,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 # TextEdit : .txt par défaut
 defaults write com.apple.TextEdit RichText -int 0
 
+# Raccourci pour exporter 
+defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
