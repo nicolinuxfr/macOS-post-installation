@@ -7,7 +7,6 @@
 # - https://github.com/ryanmaclean/OSX-Post-Install-Script/
 # - https://github.com/snwh/osx-post-install
 # - https://github.com/bdougherty/dotfiles/blob/master/osx.sh
-# - https://github.com/argon/mas/issues/41#issuecomment-245846651
 
 
 ## La base : Homebrew et les lignes de commande
@@ -94,12 +93,15 @@ brew cask install google-chrome firefox mattermost evernote transmission
 
 
 echo 'Installation des apps : photo et vidéo.'
-brew cask install imageoptim sketch google-photos-backup qlimagesize
+brew cask install handbrake handbrakecli imageoptim sketch google-photos-backup qlimagesize
 install "Acorn"
 install "Pixelmator"
 install "JPEG Mini"
 install "Napkin"
-Install "Precise Screenshot"
+install "Precise Screenshot"
+install "Final Cut Pro"
+install "Logic Pro X"
+install "Motion"
 
 
 echo 'Installation des apps : loisir.'
