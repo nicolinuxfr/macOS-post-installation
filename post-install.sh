@@ -55,7 +55,7 @@ brew install micro
 gem install sass
 
 echo 'Installation des apps : utilitaires.'
-brew cask install alfred sizeup typinator istat-menus dropbox seafile-client flux appcleaner backblaze hosts carbon
+brew cask install alfred sizeup typinator istat-menus dropbox google-drive seafile-client flux appcleaner backblaze hosts carbon
 install "FastScripts"
 install "PopClip"
 install "Amphetamine"
@@ -72,6 +72,7 @@ install "Pages"
 install "Keynote"
 install "Numbers"
 install "Soulver"
+install "Simplenote"
 brew cask install evernote
 
 echo 'Installation des apps : développement.'
@@ -199,6 +200,7 @@ defaults write com.apple.TextEdit RichText -int 0
 
 # Raccourci pour exporter 
 defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
+defaults write -app Acorn NSUserKeyEquivalents '{"90° Clockwise "="@l";}'
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
