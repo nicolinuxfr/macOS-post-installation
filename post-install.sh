@@ -79,6 +79,7 @@ echo 'Installation des apps : développement.'
 brew install hugo
 brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit
 install "Xcode"
+install "TextWrangler"
 install "Quiver"
 install "JSON Helper for AppleScript"
 install "Twitter Scripter"
