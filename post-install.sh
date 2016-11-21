@@ -61,6 +61,9 @@ install "PopClip"
 install "Amphetamine"
 install "MacTracker"
 
+echo "Ouverture de Google Drive pour commencer la synchronisation"
+open -a Google\ Drive
+
 # Installation manuelle de SearchLink
 cd /tmp/ && wget http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
 
