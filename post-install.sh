@@ -113,7 +113,6 @@ echo 'Installation des apps : loisir.'
 brew install mpv --with-bundle
 brew linkapps mpv # Pour avoir un .app dans le dossier des Applications
 install "TunesArt"
-# TunesArt
 brew cask install vox xld beardedspice
 
 # DockArt (installation manuelle, faute de mieux)
@@ -204,7 +203,6 @@ defaults write com.apple.TextEdit RichText -int 0
 
 # Raccourci pour exporter 
 defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
-defaults write -app Acorn NSUserKeyEquivalents '{"90° Clockwise "="@l";}'
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
@@ -214,6 +212,5 @@ killall Finder
 echo "Derniers nettoyages…"
 brew cleanup
 rm -f -r /Library/Caches/Homebrew/*
-
 
 echo "ET VOILÀ"
