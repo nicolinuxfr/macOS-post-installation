@@ -9,10 +9,9 @@
 # - https://github.com/bdougherty/dotfiles/blob/master/osx.sh
 
 
-## La base : Homebrew et les lignes de commande
-echo 'Installation des lignes de commandes'
-xcode-select --install
 
+
+## La base : Homebrew et les lignes de commande
 if test ! $(which brew)
 then
 	echo 'Installation de Homebrew'
