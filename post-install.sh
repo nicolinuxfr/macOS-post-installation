@@ -64,7 +64,6 @@ install "MacTracker"
 # Installation manuelle de SearchLink
 cd /tmp/ && wget http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
 
-
 # Installation de oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -95,7 +94,7 @@ install "Twitter"
 install "Tweetbot"
 install "1Password"
 install "Wunderlist"
-brew cask install google-chrome firefox mattermost evernote transmission
+brew cask install google-chrome firefox mattermost transmission
 
 
 echo 'Installation des apps : photo et vidéo.'
