@@ -55,7 +55,7 @@ brew install micro
 gem install sass
 
 echo 'Installation des apps : utilitaires.'
-brew cask install alfred sizeup typinator istat-menus google-drive seafile-client flux appcleaner backblaze hosts carbon
+brew cask install alfred sizeup typinator istat-menus google-drive seafile-client flux appcleaner backblaze hosts carbon-copy-cloner
 install "FastScripts"
 install "PopClip"
 install "Amphetamine"
