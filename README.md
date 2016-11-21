@@ -15,6 +15,7 @@ Ce script exploite exclusivement des lignes de commande Shell et il n'a ainsi au
 
 Le script exploite [Homebrew](http://brew.sh "Homebrew — The missing package manager for macOS"), [Cask](https://caskroom.github.io) et [mas](https://github.com/mas-cli/mas) pour installer les apps. Plus de nombreuses idées piochées [à droite et à gauche](https://github.com/nicolinuxfr/macOS-post-installation#inspirations).
 
+*Testé avec macOS Sierra et OS X El Capitan.*
 
 ## Comment l'utiliser ?
 
