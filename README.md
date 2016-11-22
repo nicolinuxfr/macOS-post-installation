@@ -50,3 +50,6 @@ Voici quelques scripts qui m'ont servi de base pour créer le mien. Vous y trouv
 - https://github.com/ryanmaclean/OSX-Post-Install-Script/
 - https://github.com/snwh/osx-post-install
 - https://github.com/bdougherty/dotfiles/blob/master/osx.sh
+- https://github.com/joeyhoer/starter
+
+Si vous cherchez à modifier les paramètres par défaut de macOS, la source d'information la plus complète, et de loin, est le [starter de joeyhoer](https://github.com/joeyhoer/starter). Vous y trouverez des dizaines et des dizaines de réglages, à vous de piocher dedans pour les adapter au mieux. 
