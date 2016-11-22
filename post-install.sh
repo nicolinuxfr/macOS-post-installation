@@ -113,24 +113,6 @@ cd /tmp/ && curl -O http://www.splook.com/Software/DockArt_files/DockArt2.zip &&
 ## ************************* CONFIGURATION ********************************
 echo "Configuration de quelques paramètres par défaut…"
 
-## DIVERS
-
-# Accès au clavier complet (tabulation dans les boîtes de dialogue)
-sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Arrêt pop-up clavier façon iOS
-sudo defaults write -g ApplePressAndHoldEnabled -bool false
-
-# Répétition touches plus rapide
-sudo defaults write NSGlobalDomain KeyRepeat -int 0.02
-
-# Alertes sonores quand on modifie le volume
-sudo defaults write ~/Library/Preferences/.GlobalPreferences.plist -int 1
-
-# Mot de passe demandé immédiatement quand l'économiseur d'écran s'active
-defaults write com.apple.screensaver askForPassword -int 1
-defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 ## FINDER
 
 # Affichage de la bibliothèque
@@ -156,6 +138,7 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+
 ## RÉGLAGES DOCK
 # Taille du texte au minimum
 defaults write com.apple.dock tilesize -int 15
@@ -163,6 +146,14 @@ defaults write com.apple.dock tilesize -int 15
 defaults write com.apple.dock magnification -bool true
 # Taille maximale pour l'agrandissement
 defaults write com.apple.dock largesize -float 128
+
+## MISSION CONTROL
+# Pas d'organisation des bureaux en fonction des apps ouvertes
+defaults write com.apple.dock mru-spaces -bool false
+
+# Mot de passe demandé immédiatement quand l'économiseur d'écran s'active
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 ## COINS ACTIFS
 # En haut à gauche : bureau
@@ -178,17 +169,35 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-br-modifier -int 0
 
-## MISSION CONTROL
-# Pas d'organisation des bureaux en fonction des apps ouvertes
-defaults write com.apple.dock mru-spaces -bool false
+## CLAVIER ET TRACKPAD
+
+# Accès au clavier complet (tabulation dans les boîtes de dialogue)
+sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Arrêt pop-up clavier façon iOS
+sudo defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Répétition touches plus rapide
+sudo defaults write NSGlobalDomain KeyRepeat -int 1
+# Délai avant répétition des touches
+sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Alertes sonores quand on modifie le volume
+sudo defaults write ~/Library/Preferences/.GlobalPreferences.plist -int 1
+
+# Réglages Trackpad : toucher pour cliquer
+sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+sudo defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
 
 ## APPS
 
-# Safari : menu développeur / URL en bas à gauche / URL complète en haut / Do Not Track / 
+# Safari : menu développeur / URL en bas à gauche / URL complète en haut / Do Not Track / affichage barre favoris
 defaults write com.apple.safari IncludeDevelopMenu -int 1
 defaults write com.apple.safari ShowOverlayStatusBar -int 1
 defaults write com.apple.safari ShowFullURLInSmartSearchField -int 1
 defaults write com.apple.safari SendDoNotTrackHTTPHeader -int 1
+defaults write com.apple.Safari ShowFavoritesBar -bool true
 
 # Photos : pas d'affichage pour les iPhone
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
