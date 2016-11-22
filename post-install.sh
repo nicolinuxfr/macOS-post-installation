@@ -64,7 +64,7 @@ echo "Ouverture de Google Drive pour commencer la synchronisation"
 open -a Google\ Drive
 
 # Installation manuelle de SearchLink
-cd /tmp/ && wget http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
+cd /tmp/ && curl -O http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
 
 echo 'Installation des apps : bureautique.'
 install "iA Writer"
@@ -115,7 +115,7 @@ install "TunesArt"
 brew cask install vox xld beardedspice
 
 # DockArt (installation manuelle, faute de mieux)
-cd /tmp/ && wget http://www.splook.com/Software/DockArt_files/DockArt2.zip && unzip DockArt2.zip && cd DockArt\ 2.2 && mv DockArt.bundle ~/Library/iTunes/iTunes\ Plug-ins
+cd /tmp/ && curl -O http://www.splook.com/Software/DockArt_files/DockArt2.zip && unzip DockArt2.zip && cd DockArt\ 2.2 && mv DockArt.bundle ~/Library/iTunes/iTunes\ Plug-ins
 
 
 ## ************************* CONFIGURATION ********************************
