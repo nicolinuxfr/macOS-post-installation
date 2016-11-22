@@ -2,14 +2,6 @@
 
 ## README
 # /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
-# Crédits :
-# - Idée originale : https://jeremy.hu/homebrew-cask-automate-mac-install/
-# - https://github.com/ryanmaclean/OSX-Post-Install-Script/
-# - https://github.com/snwh/osx-post-install
-# - https://github.com/bdougherty/dotfiles/blob/master/osx.sh
-
-
-
 
 ## La base : Homebrew et les lignes de commande
 if test ! $(which brew)
@@ -124,16 +116,16 @@ echo "Configuration de quelques paramètres par défaut…"
 ## DIVERS
 
 # Accès au clavier complet (tabulation dans les boîtes de dialogue)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+sudo defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Arrêt pop-up clavier façon iOS
-defaults write -g ApplePressAndHoldEnabled -bool false
+sudo defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Répétition touches plus rapide
-defaults write NSGlobalDomain KeyRepeat -int 0.02
+sudo defaults write NSGlobalDomain KeyRepeat -int 0.02
 
 # Alertes sonores quand on modifie le volume
-defaults write ~/Library/Preferences/.GlobalPreferences.plist -int 1
+sudo defaults write ~/Library/Preferences/.GlobalPreferences.plist -int 1
 
 # Mot de passe demandé immédiatement quand l'économiseur d'écran s'active
 defaults write com.apple.screensaver askForPassword -int 1
@@ -148,7 +140,7 @@ chflags nohidden ~/Library
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string “Nlsv”
 defaults write com.apple.finder ShowPathbar -bool true
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+sudo defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Afficher le dossier maison par défaut
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -168,6 +160,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Taille du texte au minimum
 defaults write com.apple.dock tilesize -int 15
 # Agrandissement actif
+defaults write com.apple.dock magnification -bool true
+# Taille maximale pour l'agrandissement
 defaults write com.apple.dock largesize -float 128
 
 ## COINS ACTIFS
@@ -184,6 +178,9 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 defaults write com.apple.dock wvous-br-corner -int 2
 defaults write com.apple.dock wvous-br-modifier -int 0
 
+## MISSION CONTROL
+# Pas d'organisation des bureaux en fonction des apps ouvertes
+defaults write com.apple.dock mru-spaces -bool false
 
 ## APPS
 
@@ -196,12 +193,11 @@ defaults write com.apple.safari SendDoNotTrackHTTPHeader -int 1
 # Photos : pas d'affichage pour les iPhone
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool YES
 
-
 # TextEdit : .txt par défaut
 defaults write com.apple.TextEdit RichText -int 0
 
 # Raccourci pour exporter 
-defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
+sudo defaults write -g NSUserKeyEquivalents '{"Export…"="@$e";"Exporter…"="@$e";}'
 
 ## ************ Fin de l'installation *********
 echo "Finder et Dock relancés… redémarrage nécessaire pour terminer."
