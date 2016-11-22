@@ -16,3 +16,6 @@ mackup restore -n
 echo "Configuration de FastScripts"
 defaults write com.red-sweater.FastScripts ScriptTreePathsKey '("~/Google Drive/Logiciels/Scripts")'
 
+echo "Installation de oh-my-zsh"
+# Installation de oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
