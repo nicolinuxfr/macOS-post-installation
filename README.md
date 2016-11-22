@@ -26,8 +26,8 @@ Voici comment utiliser les deux scripts :
 	- chaque ligne qui commence par `install` correspond à une app du Mac App Store et vous devez l'avoir achetée au préalable sur votre compte ;
 	- chaque ligne qui commence par `brew install` installe des utilitaires en ligne de commande ;
 	- chaque ligne qui commence par `brew cask install` installe des applications hors du Mac App Store ;
-- pensez à changer la [ligne 65](https://github.com/nicolinuxfr/macOS-post-installation/blob/master/post-install.sh#L65) en fonction du service de Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez un ;
-- à partir de la [ligne 125](https://github.com/nicolinuxfr/macOS-post-installation/blob/master/post-install.sh#L125), le script configure quelques réglages par défaut, à modifier selon vos besoins ;
+- pensez à changer la [ligne 56](https://github.com/nicolinuxfr/macOS-post-installation/blob/master/post-install.sh#L56) en fonction du service de Cloud utilisé, ou alors à la supprimer si vous ne voulez pas en utilisez un ;
+- à partir de la [ligne 113](https://github.com/nicolinuxfr/macOS-post-installation/blob/master/post-install.sh#L113), le script configure quelques réglages par défaut, à modifier selon vos besoins ;
 - **important** : ouvrez le Mac App Store et déconnectez-vous si vous étiez connecté (c'est important pour que mas fonctionne correctement) ;
 - ouvrez ensuite le Terminal de macOS, glissez le fichier `post-install.sh` appuyez sur la touche entrée et accrochez votre ceinture ;
 - le script fonctionnera largement sans votre intervention, sauf :
