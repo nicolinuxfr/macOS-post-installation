@@ -48,7 +48,7 @@ brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils en ligne de commande.'
-brew install wget cmake coreutils psutils git ffmpeg node libssh openssh
+brew install wget cmake coreutils psutils git ffmpeg node libssh
 brew tap zyedidia/micro
 brew install micro
 gem install sass
