@@ -183,8 +183,7 @@ sudo defaults write NSGlobalDomain KeyRepeat -int 1
 sudo defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Alertes sonores quand on modifie le volume
-sudo defaults write ~/Library/Preferences/.GlobalPreferences.plist com.apple.sound.beep.feedback -int 1
-
+sudo defaults write com.apple.systemsound com.apple.sound.beep.volume -float 1
 
 # Réglages Trackpad : toucher pour cliquer
 sudo defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
