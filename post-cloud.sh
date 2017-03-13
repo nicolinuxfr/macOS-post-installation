@@ -9,7 +9,7 @@ brew install mackup
 # Sélection du service de cloud (à commenter si vous utilisez Dropbox, c'est le service par défaut) : https://github.com/lra/mackup/blob/master/doc/README.md
 echo -e "[storage]\nengine = google_drive" >> ~/.mackup.cfg
 
-# Récupéeation de la sauvegarde sans demander à chaque fois l'autorisation
+# Récupération de la sauvegarde sans demander à chaque fois l'autorisation
 mackup restore -n
 
 
