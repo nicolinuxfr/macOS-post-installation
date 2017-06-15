@@ -3,7 +3,7 @@
 ## README
 # /!\ Ce script d'installation est conçu pour mon usage. Ne le lancez pas sans vérifier chaque commande ! /!\
 
-## La base : Homebrew et les lignes de commande
+## La base : Homebrew
 if test ! $(which brew)
 then
 	echo 'Installation de Homebrew'
@@ -22,6 +22,9 @@ echo "Saisir le mot de passe du compte : $COMPTE"
 read -s PASSWORD
 mas signin $COMPTE "$PASSWORD"
 
+echo 'Installation de Cask, pour installer les autres apps.'
+brew tap caskroom/cask
+
 # Installation d'apps avec mas (source : https://github.com/argon/mas/issues/41#issuecomment-245846651)
 function install () {
 	# Check if the App is already installed
@@ -34,9 +37,6 @@ function install () {
 		mas search "$1" | { read app_ident app_name ; mas install $app_ident ; }
 	fi
 }
-
-echo 'Installation de Cask, pour installer les autres apps.'
-brew tap caskroom/cask
 
 ## Installations des logiciels
 echo 'Installation des outils en ligne de commande.'
@@ -56,7 +56,7 @@ echo "Ouverture de Google Drive pour commencer la synchronisation"
 open -a Google\ Drive
 
 # Installation manuelle de SearchLink
-cd /tmp/ && curl -O http://cdn3.brettterpstra.com/downloads/SearchLink2.2.3.zip && unzip SearchLink2.2.3.zip && cd SearchLink2.2.3 && mv SearchLink.workflow ~/Library/Services/
+cd /tmp/ && curl -O http://cdn3.brettterpstra.com/downloads/SearchLink2.2.5.zip && unzip SearchLink2.2.5.zip && cd SearchLink2.2.5 && mv SearchLink.workflow ~/Library/Services/
 
 echo 'Installation des apps : bureautique.'
 install "iA Writer"
@@ -71,10 +71,8 @@ brew cask install evernote
 
 echo 'Installation des apps : développement.'
 brew install hugo
-brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit
+brew cask install iterm2 github-desktop textmate tower coda atom wordpresscom transmit bbedit
 install "Xcode"
-install "TextWrangler"
-install "Quiver"
 install "JSON Helper for AppleScript"
 install "Twitter Scripter"
 
@@ -84,7 +82,6 @@ install "Reeder"
 install "Twitter"
 install "Tweetbot"
 install "1Password"
-install "Wunderlist"
 brew cask install google-chrome firefox mattermost transmission
 
 
@@ -94,11 +91,7 @@ install "Acorn"
 install "Pixelmator"
 install "JPEG Mini"
 install "Napkin"
-install "Precise Screenshot"
 install "Final Cut Pro"
-install "Logic Pro X"
-install "Motion"
-
 
 echo 'Installation des apps : loisir.'
 brew install mpv --with-bundle
